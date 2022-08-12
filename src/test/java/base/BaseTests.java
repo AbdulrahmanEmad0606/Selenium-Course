@@ -1,32 +1,26 @@
 package base;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
+import Pages.HomePage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.sql.Driver;
-import java.util.List;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 public class BaseTests {
+    protected HomePage homePage;
     // initialize web driver
     private WebDriver driver;
-
-    public void setUpChromeDriver(){
-        System.setProperty("webdriver.chrome.driver","Resources/chromedriver.exe");
-        driver=new ChromeDriver();
+    @BeforeClass
+    public void setUpChromeDriver() {
+        System.setProperty("webdriver.chrome.driver", "Resources/chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("https://the-internet.herokuapp.com/");
-        WebElement inputs =driver.findElement(By.linkText("inputs"));
-        List<WebElement> links = driver.findElements(By.tagName("a"));
-        System.out.println(links.size());
-        //find element using x-path;
-        //WebElement inputs =driver.findElement(By.xpath("//*[@id=\"content\"]/ul/li[27]/a"));
-        inputs.click();
+        homePage = new HomePage(driver);
     }
 
-public static void main(String args[]){
- BaseTests baseTests=new BaseTests();
- baseTests.setUpChromeDriver();
-}
+    @AfterClass
+    public void closeWebSite() {
+        driver.quit();
+    }
 }

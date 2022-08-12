@@ -1,10 +1,13 @@
 package base;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.sql.Driver;
+import java.util.List;
 
 public class BaseTests {
     // initialize web driver
@@ -14,14 +17,12 @@ public class BaseTests {
         System.setProperty("webdriver.chrome.driver","Resources/chromedriver.exe");
         driver=new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/");
-        // get title of the current page
-        System.out.println(driver.getTitle());
-        // set window with a specific dimensions
-        driver.manage().window().setSize(new Dimension(375,812));
-        // full screen page
-        //driver.manage().window().fullscreen();
-        // maximize page
-        //driver.manage().window().maximize();
+        WebElement inputs =driver.findElement(By.linkText("inputs"));
+        List<WebElement> links = driver.findElements(By.tagName("a"));
+        System.out.println(links.size());
+        //find element using x-path;
+        //WebElement inputs =driver.findElement(By.xpath("//*[@id=\"content\"]/ul/li[27]/a"));
+        inputs.click();
     }
 
 public static void main(String args[]){

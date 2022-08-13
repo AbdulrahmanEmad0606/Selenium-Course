@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.awt.image.Kernel;
+
 public class HomePage {
     private WebDriver driver;
     public HomePage(WebDriver driver){
@@ -11,15 +13,22 @@ public class HomePage {
     }
 
     public LoginPage authPage(){
-        driver.findElement(By.linkText("Form Authentication")).click();
+        getElement("Form Authentication");
         return new LoginPage(driver);
     }
     public DropDownPage clickDropDown(){
-        driver.findElement(By.linkText("Dropdown")).click();
+        getElement("Dropdown");
         return new DropDownPage(driver);
     }
     public HoversPage hoverPage(){
-        driver.findElement(By.linkText("Hovers")).click();
+        getElement("Hovers");
         return new HoversPage(driver);
+    }
+    public KeyPresses keyPresses(){
+        getElement("Key Presses");
+        return new KeyPresses(driver);
+    }
+    private void getElement(String linkText){
+        driver.findElement(By.linkText(linkText)).click();
     }
 }

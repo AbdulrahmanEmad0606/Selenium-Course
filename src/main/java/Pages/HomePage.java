@@ -28,6 +28,10 @@ public class HomePage {
         getElement("Key Presses");
         return new KeyPresses(driver);
     }
+    public SliderPage sliderPage(){
+        getElement("Horizontal Slider");
+        return new SliderPage(driver);
+    }
     private void getElement(String linkText){
         driver.findElement(By.linkText(linkText)).click();
     }

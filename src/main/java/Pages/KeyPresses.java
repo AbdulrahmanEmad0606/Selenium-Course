@@ -19,6 +19,7 @@ public class KeyPresses {
         // here I till him click on ALT then p char using Keys.chord function
         driver.findElement(target).sendKeys(Keys.chord(Keys.ALT,"p")+"=3.14");
     }
+
     public String getResult(){
         return driver.findElement(result).getText();
     }

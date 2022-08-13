@@ -18,4 +18,8 @@ public class HomePage {
         driver.findElement(By.linkText("Dropdown")).click();
         return new DropDownPage(driver);
     }
+    public HoversPage hoverPage(){
+        driver.findElement(By.linkText("Hovers")).click();
+        return new HoversPage(driver);
+    }
 }

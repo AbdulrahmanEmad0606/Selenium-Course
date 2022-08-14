@@ -11,7 +11,10 @@ public class HomePage {
     public HomePage(WebDriver driver){
         this.driver=driver;
     }
-
+    public ShiftingContentPage shiftting(){
+        getElement("Shifting Content");
+        return new ShiftingContentPage(driver);
+    }
     public LoginPage authPage(){
         getElement("Form Authentication");
         return new LoginPage(driver);

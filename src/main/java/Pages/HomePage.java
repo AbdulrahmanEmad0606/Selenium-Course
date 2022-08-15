@@ -35,6 +35,11 @@ public class HomePage {
         getElement("Horizontal Slider");
         return new SliderPage(driver);
     }
+    public AlertsPage alertsPage(){
+        getElement("JavaScript Alerts");
+        return new AlertsPage(driver);
+    }
+
     private void getElement(String linkText){
         driver.findElement(By.linkText(linkText)).click();
     }

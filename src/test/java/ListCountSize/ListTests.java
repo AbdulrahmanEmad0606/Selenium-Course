@@ -10,7 +10,6 @@ public class ListTests extends BaseTests {
     public void testListCount(){
         var m = homePage.shiftting();
         var g = m.goTo();
-        assertEquals(g.getListCounts(),5
-        );
+        assertEquals(g.getListCounts(),5);
     }
 }

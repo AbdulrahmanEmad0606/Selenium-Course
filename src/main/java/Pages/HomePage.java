@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.awt.image.Kernel;
+import java.io.File;
 
 public class HomePage {
     private WebDriver driver;
@@ -38,6 +39,10 @@ public class HomePage {
     public AlertsPage alertsPage(){
         getElement("JavaScript Alerts");
         return new AlertsPage(driver);
+    }
+    public FileUploadPage fileUpload(){
+        getElement("File Upload");
+        return new FileUploadPage(driver);
     }
 
     private void getElement(String linkText){

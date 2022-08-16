@@ -1,3 +1,5 @@
+package Alerts;
+
 import base.BaseTests;
 import org.testng.annotations.Test;
 

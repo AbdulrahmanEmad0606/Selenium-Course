@@ -40,6 +40,11 @@ public class HomePage {
         getElement("JavaScript Alerts");
         return new AlertsPage(driver);
     }
+
+    public IframePage iframePage(){
+        getElement("WYSIWYG Editor");
+        return new IframePage(driver);
+    }
     public FileUploadPage fileUpload(){
         getElement("File Upload");
         return new FileUploadPage(driver);

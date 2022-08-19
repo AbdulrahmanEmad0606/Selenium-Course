@@ -49,7 +49,10 @@ public class HomePage {
         getElement("File Upload");
         return new FileUploadPage(driver);
     }
-
+    public DynamicLoadingExamplePage dynamicLoadingExamplePage(){
+        getElement("Dynamic Loading");
+        return new DynamicLoadingExamplePage(driver);
+    }
     private void getElement(String linkText){
         driver.findElement(By.linkText(linkText)).click();
     }

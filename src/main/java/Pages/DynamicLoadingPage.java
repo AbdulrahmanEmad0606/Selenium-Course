@@ -2,6 +2,7 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -9,8 +10,7 @@ public class DynamicLoadingPage {
     private final WebDriver driver;
     private By loadingIndicator = By.id("loading");
     private final By message = By.id("finish");
-    private final By startBtn = By.cssSelector("#start button");
-
+    private  By startBtn = By.cssSelector("#start button");
     public DynamicLoadingPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -31,6 +31,11 @@ public class DynamicLoadingPage {
 
     public String getMessageAfterLoadingHidden() {
         return driver.findElement(message).getText();
+    }
+    public boolean isStartButtonDisplayed(){
+        boolean exists = driver.findElements(startBtn).size() != 0;
+        return exists;
+
     }
     // second button
 

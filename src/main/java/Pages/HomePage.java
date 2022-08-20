@@ -1,5 +1,6 @@
 package Pages;
 
+import Utils.WindowManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -52,6 +53,18 @@ public class HomePage {
     public DynamicLoadingExamplePage dynamicLoadingExamplePage(){
         getElement("Dynamic Loading");
         return new DynamicLoadingExamplePage(driver);
+    }
+    public LargeDeepDomPage largeDeepDom(){
+        getElement("Large & Deep DOM");
+        return new LargeDeepDomPage(driver);
+    }
+
+    public WindowManager getWindowManager(){
+        return new WindowManager(driver);
+    }
+    public MultipleWindowsPage multipleWindowsPage(){
+        getElement("Multiple Windows");
+        return new MultipleWindowsPage(driver);
     }
     private void getElement(String linkText){
         driver.findElement(By.linkText(linkText)).click();

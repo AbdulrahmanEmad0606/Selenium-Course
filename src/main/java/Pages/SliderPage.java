@@ -18,4 +18,7 @@ public class SliderPage {
     public String getSliderValue(){
         return driver.findElement(sliderValue).getText();
     }
+
+    public static class MultipleWindowsPage {
+    }
 }

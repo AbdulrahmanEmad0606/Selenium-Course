@@ -24,7 +24,7 @@ public class IframeTests extends BaseTests {
     }
 
     /*
-    @Test(priority = 2)
+    /@Test(priority = 2)
     public void testIdentation(){
         IframePage iframePage = homePage.iframePage();
         iframePage.setIdentation();
